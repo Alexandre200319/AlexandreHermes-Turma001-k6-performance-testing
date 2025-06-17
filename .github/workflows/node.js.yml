@@ -15,8 +15,7 @@ jobs:
 
       - name: Setup K6
         uses: grafana/setup-k6-action@v1.1.0
-
-      - name: Run K6 test
-        run: |
-          mkdir -p src/output
-          k6 run src/tests/main.test.js
+      - name: Run local k6 test
+        uses: grafana/run-k6-action@v1.1.3
+        with:
+          path: src/tests
